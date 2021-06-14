@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time [JS]</title>
+</head>
+<body style="font-family: sans-serif;" onload=display_ct(); >
+    <span style="text-transform: uppercase; text-align: center; background-color: #1c1c1c; color: #fff; display: block; font-size: 50px; text-decoration: underline; padding-bottom: 10px;" >
+        date & time
+    </span>
+    
+    <div style="background-color:rgb(46, 181, 137); color: #fff; display: block; text-align: center; font-size: 40px; padding: 20px;" id="ct">
+    </div>
+    
+    <div style="background-color:rgb(46, 181, 137); color: #fff; display: block; text-align: center; font-size: 40px; padding: 20px;" id="ct0">
+    </div>
+    
+    <div style="background-color:rgb(46, 181, 137); color: #fff; display: block; text-align: center; font-size: 40px; padding: 20px;" id="ct2">
+    </div>
+
+    <div style="background-color:rgb(46, 181, 137); color: #fff; display: block; text-align: center; font-size: 40px; padding: 20px;" id="ct1">
+    </div>
+
+    <span style="display: flex; flex-direction: column; justify-content: center; background-color: #1c1c1c; height: 50px; ">
+        <p style="text-transform: uppercase; margin: auto; color: #fff;">
+            crafted by : md. mahmudul hassan
+        </p>
+    </span>
+
+    <script type="text/javascript"> 
+            
+        function display_ct() {
+            var date_catcher = new Date();
+            
+            var options_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+            
+
+            var main = document.querySelector('#ct');
+            var main1 = document.querySelector('#ct2');
+            var main0 = document.querySelector('#ct0');
+            main.innerHTML = date_catcher.toLocaleDateString('ar-AR', options_date);
+            main1.innerHTML = date_catcher.toLocaleDateString('bn-BN', options_date);
+            main0.innerHTML = date_catcher.toLocaleDateString('en-EN', options_date);
+            
+            //time codes
+            
+            function display_c(){
+                var refresh=1000;
+                mytime=setTimeout('display_ct()',refresh);
+            }
+    
+            var today = new Date();
+            //var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            
+            var time_date = document.querySelector('#ct1');
+    
+            time_date.innerHTML =time;
+            display_c();
+        }
+    </script>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & time live</title>
+</head>
+<body onload= display_ct(); >
+    <div lang="ar">
+        date & time:
+    </div>
+    <div class="clock">
+        
+    </div>
+    <div id="cts">
+        
+    </div>
+
+
+    <script>
+        //own code
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time, timeout;
+
+        var time_date = document.querySelector('.clock');
+
+        time_date.innerHTML =dateTime;
+
+    </script>
+</body>
+</html>
+-->
